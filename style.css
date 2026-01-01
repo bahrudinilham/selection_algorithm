@@ -1,0 +1,115 @@
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --primary-color: #3b82f6;
+  --secondary-color: #64748b;
+  --accent-red: #ef4444; /* Current min candidate */
+  --accent-blue: #3b82f6; /* Current iterator j */
+  --accent-green: #22c55e; /* Sorted partition */
+  --box-color: #ffffff;
+  --box-text: #000000;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+.controls {
+  margin: 20px 0;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+button:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#image-container {
+  /* Renamed ideally to container but sticking to ID for less churn */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align bottom for bar chart effect if we wanted that, but boxes are equal size */
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto;
+  padding: 20px;
+  min-height: 100px;
+}
+
+.strip {
+  /* Now represents a number box */
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 8px; /* Rounded corners */
+  transition: transform 0.3s ease, background-color 0.3s;
+  border: 2px solid #ccc; /* Subtle border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Visualization states */
+.highlight-min {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 15px var(--accent-red);
+  color: var(--accent-red);
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.highlight-current {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 10px var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.sorted {
+  background-color: var(--accent-green);
+  color: white;
+  border-color: var(--accent-green);
+}
+
+#status {
+  margin-top: 15px;
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+}

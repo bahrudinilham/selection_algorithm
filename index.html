@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection Sort Visualization</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Selection Sort Visualization</h1>
+      <p>
+        Click "Shuffle" to generate random numbers, then "Sort" to watch the
+        Selection Sort algorithm order them from smallest to largest.
+      </p>
+
+      <div class="controls">
+        <button id="shuffleBtn">Shuffle</button>
+        <button id="sortBtn" disabled>Sort</button>
+      </div>
+
+      <div id="image-container">
+        <!-- Strips will be generated here by JavaScript -->
+      </div>
+
+      <div id="status">Ready</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
